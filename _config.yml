@@ -1,0 +1,16 @@
+title: Zethesis Research & Engineering
+description: Advanced simulation, numerical methods and scientific software for industrial engineering.
+url: "https://www.zethesis.eu"
+baseurl: ""
+
+theme: minima
+
+author:
+  name: Andrea Rocca, PhD
+  email: andrea@zethesis.eu
+
+header_pages:
+  - services.md
+  - technical-notes.md
+  - about.md
+  - contact.md
