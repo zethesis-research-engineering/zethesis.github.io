@@ -13,7 +13,7 @@ Zethesis Research & Engineering bridges rigorous research and industrial applica
     for complex engineering applications.
   </p>
 
-  <img src="/assets/images/cfd-vortex.png" alt="CFD simulation visualization" class="site-image">
+  <img src="/assets/images/ext-logo.png" alt="" class="site-image">
 </section>
 ## What we do
 
