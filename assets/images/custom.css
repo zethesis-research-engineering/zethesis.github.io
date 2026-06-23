@@ -1,0 +1,8 @@
+.site-image {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 14px;
+  margin: 28px 0;
+  display: block;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
