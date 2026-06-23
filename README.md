@@ -1,4 +1,4 @@
-# Zethesis Research & Engineering — Jekyll site
+# Zethesis Research & Engineering 
 
 Upload these files to the root of your GitHub repository.
 
