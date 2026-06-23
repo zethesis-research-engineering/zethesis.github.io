@@ -6,6 +6,7 @@ title: Zethesis Research & Engineering
 # Advanced simulation, numerical methods and scientific software for industrial engineering.
 
 Zethesis Research & Engineering bridges rigorous research and industrial applications through CFD, scientific computing and simulation workflow development.
+
 <section class="section-z">
   <h2>Simulation-driven research for industrial engineering</h2>
   <p>
@@ -15,6 +16,7 @@ Zethesis Research & Engineering bridges rigorous research and industrial applica
 
   <img src="/assets/images/ext-logo.png" alt="" class="site-image">
 </section>
+
 ## What we do
 
 We help engineering teams transform complex simulation workflows, numerical methods and technical prototypes into reliable tools for industrial use.
