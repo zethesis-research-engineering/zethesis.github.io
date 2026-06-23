@@ -8,9 +8,9 @@ permalink: /contact/
 
 For technical collaborations, R&D projects or engineering software development:
 
-**Andrea Rocca, PhD**  
+**Robert Smith, PhD**  
 Founder & Technical Lead  
 Zethesis Research & Engineering  
 
-[a.rocca@zethesis.eu](mailto:andrea@zethesis.eu)  
+[contact@zethesis.eu](mailto:contact@zethesis.eu)  
 [www.zethesis.eu](https://www.zethesis.eu)
