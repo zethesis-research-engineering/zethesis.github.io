@@ -5,8 +5,8 @@ baseurl: ""
 
 theme: minima
 
-author: Andrea Rocca, PhD
-email: a.rocca@zethesis.eu
+author: Robert Smith, PhD
+email: contact@zethesis.eu
 
 header_pages:
   - services.md
