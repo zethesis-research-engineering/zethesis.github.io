@@ -13,3 +13,5 @@ header_pages:
   - technical-notes.md
   - about.md
   - contact.md
+plugins:
+  - jekyll-feed
