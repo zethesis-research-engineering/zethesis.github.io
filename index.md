@@ -25,4 +25,4 @@ We help engineering teams transform complex simulation workflows, numerical meth
 
 For technical collaborations, R&D projects or engineering software development:
 
-[andrea@zethesis.eu](mailto:andrea@zethesis.eu)
+[a.rocca@zethesis.eu](mailto:a.rocca@zethesis.eu)
