@@ -30,9 +30,3 @@ We help engineering teams transform complex simulation workflows, numerical meth
 - Simulation workflow automation
 - Turbomachinery and aerospace applications
 - Validation and post-processing workflows
-
-## Contact
-
-For technical collaborations, R&D projects or engineering software development:
-
-[a.rocca@zethesis.eu](mailto:a.rocca@zethesis.eu)
