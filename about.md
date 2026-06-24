@@ -8,8 +8,6 @@ Zethesis Research & Engineering is a private R&D initiative founded by Robert Sm
 
 The work is hands-on and technical: CFD workflows, numerical methods, scientific computing, and the often-overlooked task of making research code reliable enough to depend on.
 
-### The name
-
 <img src="/assets/images/kingfisher.png" alt="Kingfisher emerging from water" style="display:block;width:100%;max-width:480px;margin:0.5rem 0 1.5rem;border-radius:6px;">
 
 The Zethesis mark is inspired by aquatic birds such as the kingfisher and the heron — forms shaped by air, water, precision and patience.
