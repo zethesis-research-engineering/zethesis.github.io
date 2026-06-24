@@ -1,27 +1,19 @@
 ---
 layout: home
-title: Zethesis Research & Engineering
+title: Home
 ---
+
+<img src="/assets/images/ext-logo.png" alt="Zethesis Research & Engineering" style="max-width:380px;display:block;margin:0.5rem 0 1.5rem;">
 
 # Advanced simulation, numerical methods and scientific software for industrial engineering.
 
 Zethesis Research & Engineering bridges rigorous research and industrial applications through CFD, scientific computing and simulation workflow development.
 
-<section class="section-z">
-  <h2>Simulation-driven research for industrial engineering</h2>
-  <p>
-    Zethesis works on CFD workflows, numerical methods and scientific software
-    for complex engineering applications.
-  </p>
-
-  <img src="/assets/images/ext-logo.png" alt="" class="site-image">
-</section>
-
-## What we do
+### What we do
 
 We help engineering teams transform complex simulation workflows, numerical methods and technical prototypes into reliable tools for industrial use.
 
-## Focus areas
+### Focus areas
 
 - Computational fluid dynamics
 - Numerical methods
@@ -30,3 +22,7 @@ We help engineering teams transform complex simulation workflows, numerical meth
 - Simulation workflow automation
 - Turbomachinery and aerospace applications
 - Validation and post-processing workflows
+
+### Contact
+
+For technical collaborations, R&D projects or engineering software development: [contact@zethesis.eu](mailto:contact@zethesis.eu)
