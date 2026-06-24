@@ -10,6 +10,8 @@ The work is hands-on and technical: CFD workflows, numerical methods, scientific
 
 ### The name
 
+<img src="/assets/images/kingfisher.png" alt="Kingfisher emerging from water" style="display:block;width:100%;max-width:480px;margin:0.5rem 0 1.5rem;border-radius:6px;">
+
 The Zethesis mark is inspired by aquatic birds such as the kingfisher and the heron — forms shaped by air, water, precision and patience.
 
 The kingfisher suggests fast penetration of a fluid interface with minimal disturbance. The heron suggests balance, observation and controlled motion. Both reflect the idea behind the work: understand the flow, reduce the complexity, and turn physics into engineering insight.
