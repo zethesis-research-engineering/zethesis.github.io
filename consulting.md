@@ -26,7 +26,7 @@ A 30-minute video call to understand your problem, check whether CFD is the righ
   Cal.ns["exploratory"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
 
-## CFD consulting — €150 / hour
+## CFD consulting — €150 / 90 min
 
 Focused remote sessions on a concrete problem: solver setup, meshing, turbulence modelling (RANS or high-order LES), validation or post-processing. Booked and paid by the session.
 
