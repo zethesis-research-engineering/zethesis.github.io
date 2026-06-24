@@ -4,26 +4,28 @@ title: Services
 permalink: /services/
 ---
 
-# Services
+We work on the practical problems that appear when research-grade simulation has to become dependable engineering output.
 
-Zethesis Research & Engineering works at the interface between scientific research and industrial engineering practice.
+## CFD consulting and simulation studies
+
+Consulting and simulation work across axial and radial turbomachinery, hydraulic turbines, external aerodynamics, aeroacoustics and hydroacoustics. We work with RANS where it is the right tool, and with high-order LES when the physics demands it.
 
 ## Simulation workflow automation
 
-Automation of repetitive CFD, post-processing, validation and reporting workflows.
+Turning manual, error-prone CFD, post-processing and reporting steps into repeatable pipelines — so the same case runs the same way every time, with less effort and fewer mistakes.
 
 ## Scientific software development
 
-Development of robust tools from research code, prototypes and numerical methods.
+Building robust, maintainable tools from prototypes, research codes and published numerical methods, with attention to testing, documentation and reproducibility.
 
-## HPC and GPU scientific computing
+## HPC and GPU computing
 
-Performance-oriented implementation for demanding computational engineering applications.
+Performance-oriented implementation — parallelisation, GPU acceleration and profiling — for simulations that are too large or too slow to run comfortably on a single machine.
 
 ## Research-code industrialization
 
-Turning fragile research prototypes into maintainable engineering software.
+Taking fragile research prototypes and making them stable enough for day-to-day engineering use: clearer structure, regression tests and a maintainable codebase.
 
 ## Validation and post-processing pipelines
 
-Development of reproducible workflows for canonical and industrial simulation cases.
+Reproducible workflows for verifying solvers against canonical and industrial cases, and for extracting consistent quantities from large result sets.

@@ -4,8 +4,6 @@ title: Contact
 permalink: /contact/
 ---
 
-# Contact
-
 For technical collaborations, R&D projects or engineering software development:
 
 **Robert Smith, PhD**  

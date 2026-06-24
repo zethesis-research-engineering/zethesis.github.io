@@ -1,0 +1,14 @@
+# Jekyll build output
+_site/
+
+# Bundled gems (installed locally by `bundle install`)
+vendor/
+.bundle/
+
+# Jekyll cache and metadata
+.jekyll-cache/
+.jekyll-metadata
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db

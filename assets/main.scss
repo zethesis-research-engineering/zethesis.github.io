@@ -1,0 +1,38 @@
+---
+# Custom brand styling for Zethesis.
+# This file overrides the stock minima theme.
+# To revert completely to the default theme, just DELETE this file.
+---
+
+// --- Brand palette (kingfisher teal) ---
+$brand-color:      #0e7c86;
+$text-color:       #1a1a1a;
+$background-color: #fdfdfd;
+
+// Pull in the theme with the overridden variables above.
+@import "minima";
+
+// --- Light brand touches ---
+
+// Thin accent bar along the top of the site header.
+.site-header {
+  border-top: 4px solid $brand-color;
+  border-bottom-color: lighten($brand-color, 45%);
+}
+
+// Make the site name read as the brand.
+.site-title,
+.site-title:visited {
+  color: $brand-color;
+  font-weight: 600;
+}
+
+// Subtle brand tint on section headings.
+.post-content h2 {
+  color: darken($brand-color, 5%);
+}
+
+// Slightly stronger hover on links for feedback.
+a:hover {
+  color: darken($brand-color, 12%);
+}
