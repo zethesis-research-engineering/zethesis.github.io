@@ -5,7 +5,7 @@ date: 2026-06-25
 categories: numerical-methods
 topic: Flux reconstruction
 math: true
-published: false   # READY — part 1 of 2 (the "why/what"). Companion: "The smallest high-order solver that works". Flip to `true` to publish.
+published: true   # READY — part 1 of 2 (the "why/what"). Companion: "The smallest high-order solver that works". Flip to `true` to publish.
 ---
 
 <!--
