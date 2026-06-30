@@ -36,3 +36,43 @@ $background-color: #fdfdfd;
 a:hover {
   color: darken($brand-color, 12%);
 }
+
+// --- Technical-note media: side-by-side videos/figures with captions ---
+.note-video-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.note-video-pair figure {
+  flex: 1 1 300px;
+  margin: 0;
+}
+.note-video-pair video {
+  width: 100%;
+  border-radius: 6px;
+  background: #eef1f4;
+}
+.note-video-pair figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+.note-caption {
+  font-size: 0.9rem;
+  color: #555;
+}
+.note-figure {
+  margin: 1.5rem 0 0.5rem;
+}
+.note-figure img {
+  width: 100%;
+  border-radius: 6px;
+}
+.note-figure figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}

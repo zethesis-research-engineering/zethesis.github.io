@@ -16,3 +16,14 @@ header_pages:
   - contact.md
 plugins:
   - jekyll-feed
+
+# Disable kramdown's built-in math engine so LaTeX delimiters ($$...$$ and $...$)
+# pass through to the HTML and are rendered client-side by MathJax 3 (see _includes/head.html).
+kramdown:
+  math_engine: false
+
+# Technical Notes are grouped by topic on /technical-notes/, in this order.
+# Give each post a matching `topic:` in its front matter. Empty topics are hidden.
+note_topics:
+  - Flux reconstruction
+  - Test case validation
