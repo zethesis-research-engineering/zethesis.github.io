@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Browser-facing stylesheet for /feed.xml.
+
+  Browsers no longer render raw Atom/RSS, so a visitor who clicks "subscribe via
+  RSS" would otherwise see XML source. jekyll-feed (>= 0.17) automatically points
+  feed.xml at this file when it exists at the site root, so the same feed that
+  readers consume now renders as a friendly page in a browser. Do not delete
+  unless you also remove the XSL behaviour from jekyll-feed.
+-->
+<xsl:stylesheet version="1.0"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:atom="http://www.w3.org/2005/Atom"
+                exclude-result-prefixes="atom">
+  <xsl:output method="html" version="1.0" encoding="utf-8" indent="yes"
+              doctype-system="about:legacy-compat"/>
+
+  <xsl:template match="/atom:feed">
+    <html lang="en">
+      <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title><xsl:value-of select="atom:title" disable-output-escaping="yes"/> | Feed</title>
+        <style>
+          :root { --brand: #0e4a86; --text: #1a1a1a; --bg: #fdfdfd; --muted: #6b7280; }
+          * { box-sizing: border-box; }
+          body {
+            margin: 0; background: var(--bg); color: var(--text);
+            font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+          }
+          .wrap { max-width: 740px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+          header { border-top: 4px solid var(--brand); padding-top: 1.5rem; }
+          .kicker {
+            display: inline-block; font-size: .72rem; letter-spacing: .08em;
+            text-transform: uppercase; color: var(--brand); font-weight: 700; margin-bottom: .4rem;
+          }
+          h1 { font-size: 1.7rem; margin: 0 0 .4rem; color: var(--brand); }
+          .subtitle { color: var(--muted); margin: 0 0 1.5rem; }
+          .note {
+            background: #eef3f9; border: 1px solid #d6e1ef; border-radius: 8px;
+            padding: .9rem 1.1rem; font-size: .92rem; color: #2a3a4d; margin-bottom: 2.25rem;
+          }
+          .note code {
+            background: #fff; border: 1px solid #d6e1ef; border-radius: 4px;
+            padding: .05rem .35rem; font-size: .88em; word-break: break-all;
+          }
+          ol { list-style: none; margin: 0; padding: 0; }
+          li { padding: 1.1rem 0; border-bottom: 1px solid #e5e7eb; }
+          li:last-child { border-bottom: none; }
+          .entry-title { font-size: 1.15rem; font-weight: 600; margin: 0 0 .25rem; }
+          .entry-title a { color: var(--text); text-decoration: none; }
+          .entry-title a:hover { color: var(--brand); text-decoration: underline; }
+          time { color: var(--muted); font-size: .85rem; }
+          footer { margin-top: 2.5rem; font-size: .85rem; color: var(--muted); }
+          footer a { color: var(--brand); }
+        </style>
+      </head>
+      <body>
+        <div class="wrap">
+          <header>
+            <span class="kicker">RSS / Atom feed</span>
+            <h1><xsl:value-of select="atom:title" disable-output-escaping="yes"/></h1>
+            <p class="subtitle"><xsl:value-of select="atom:subtitle" disable-output-escaping="yes"/></p>
+          </header>
+
+          <p class="note">
+            This is a web feed for subscribing in a reader (Feedly, NetNewsWire,
+            Thunderbird, …). Copy this page's address —
+            <code><xsl:value-of select="atom:link[@rel='self']/@href"/></code> —
+            and paste it into your reader to get new posts automatically.
+          </p>
+
+          <ol>
+            <xsl:for-each select="atom:entry">
+              <li>
+                <p class="entry-title">
+                  <a target="_blank">
+                    <xsl:attribute name="href">
+                      <xsl:value-of select="atom:link/@href"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="atom:title" disable-output-escaping="yes"/>
+                  </a>
+                </p>
+                <time><xsl:value-of select="substring(atom:published, 1, 10)"/></time>
+              </li>
+            </xsl:for-each>
+          </ol>
+
+          <footer>
+            <a>
+              <xsl:attribute name="href">
+                <xsl:value-of select="atom:link[@rel='alternate']/@href"/>
+              </xsl:attribute>
+              ← Back to the site
+            </a>
+          </footer>
+        </div>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

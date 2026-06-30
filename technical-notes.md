@@ -4,7 +4,7 @@ title: Technical Notes
 permalink: /technical-notes/
 ---
 
-Short, practical notes on simulation, numerical methods, CFD workflows and scientific software — written from real engineering problems rather than textbook cases. Grouped by topic; newest first within each.
+Short, practical notes on simulation, numerical methods, CFD workflows and scientific software — written from real engineering problems rather than textbook cases. Grouped by topic; 
 
 {% if site.posts.size > 0 %}
 {% for topic in site.note_topics %}

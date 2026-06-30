@@ -6,7 +6,7 @@ categories: numerical-methods
 topic: Flux reconstruction
 part: 2
 math: true
-published: true   # READY — part 2 of 2 (the build). Companion: "Why high-order? Flux reconstruction, from motivation to method". Flip to `true` to publish.
+published: true   # READY: part 2 of 2 (the build). Companion: "Why high-order? Flux reconstruction, from motivation to method". Flip to `true` to publish.
 ---
 
 <!--
@@ -16,9 +16,9 @@ published: true   # READY — part 2 of 2 (the build). Companion: "Why high-orde
   ../zethesis.github.io.dev/note-01-flux-reconstruction/conv_study.py.
 -->
 
-In the [companion note](/numerical-methods/2026/06/25/why-high-order-flux-reconstruction.html) we made the case for high-order — same cost, far less error on smooth flows — and ended on the single idea behind flux reconstruction: discontinuous polynomials inside each element, stitched together by a common interface flux and a correction function. Here we cash it in. This is the smallest flux-reconstruction solver that actually works: 1D linear advection, a few dozen lines of Python you can read in one sitting.
+In [chapter 1](/numerical-methods/2026/06/25/why-high-order-flux-reconstruction.html) we made the case for high-order (same cost, far less error on smooth flows) and ended on the single idea behind flux reconstruction: discontinuous polynomials inside each element, stitched together by a common interface flux and a correction function. Here we build it. This is the smallest flux-reconstruction solver that actually works: 1D linear advection, a few dozen lines of Python you can read in one sitting.
 
-And it earns its keep:
+The result, before any of the code:
 
 <figure class="note-figure">
   <img src="/assets/images/fr1d_convergence.png" alt="Convergence of the 1D flux-reconstruction solver: h-refinement showing error proportional to N to the minus (p plus one), and p-refinement showing exponential decay of the error.">
@@ -33,7 +33,7 @@ The simplest hyperbolic problem there is,
 
 $$ \frac{\partial u}{\partial t} + a\,\frac{\partial u}{\partial x} = 0, \qquad a > 0, $$
 
-on a periodic domain. There are no source terms, no nonlinearity and no boundary subtlety to muddy the water, so any error you see is the scheme's own — the same honesty as the advection experiment in the companion note.
+on a periodic domain. There are no source terms, no nonlinearity and no boundary subtlety to muddy the water, so any error you see is the scheme's own, the same honesty as the advection experiment in the companion note.
 
 ## The recipe
 
@@ -41,11 +41,11 @@ Map each element to the reference interval $$\xi \in [-1, 1]$$, where $$\mathrm{
 
 $$ \frac{\partial u}{\partial t} = -\frac{2}{\Delta x}\Big[\, \underbrace{\frac{\partial F^{D}}{\partial \xi}}_{\text{element flux}} + \big(f^{*}_{L} - f^{D}_{L}\big)\,g_{L}'(\xi) + \big(f^{*}_{R} - f^{D}_{R}\big)\,g_{R}'(\xi) \,\Big], $$
 
-where $$F^{D} = a\,u$$ is the element's discontinuous flux, $$f^{D}_{L,R}$$ are that flux extrapolated to the left/right faces, $$f^{*}_{L,R}$$ are the common (upwind) interface fluxes, and $$g_{L}', g_{R}'$$ are the derivatives of the Radau correction functions — the choice that makes this FR scheme coincide with nodal DG. Advance in time with classical RK4.
+where $$F^{D} = a\,u$$ is the element's discontinuous flux, $$f^{D}_{L,R}$$ are that flux extrapolated to the left/right faces, $$f^{*}_{L,R}$$ are the common (upwind) interface fluxes, and $$g_{L}', g_{R}'$$ are the derivatives of the Radau correction functions, the choice that makes this FR scheme coincide with nodal DG. Advance in time with classical RK4.
 
 Two implementation details are worth flagging because they are the usual places to go wrong:
 
-- The **differentiation matrix** must be the true derivative of the Lagrange basis, $$D_{ij} = \ell_j'(\xi_i)$$. The off-diagonal entry is $$D_{ij} = (w_j/w_i)\,/\,(\xi_i - \xi_j)$$ with barycentric weights $$w_j = 1/\prod_{k\neq j}(\xi_j-\xi_k)$$ — *not* simply $$1/(\xi_i-\xi_j)$$, which is only correct when all the weights are equal (they are not, for Gauss points). The code below uses the correct form. (An earlier draft of this solver had exactly this bug; it is an easy one to make.)
+- The **differentiation matrix** must be the true derivative of the Lagrange basis, $$D_{ij} = \ell_j'(\xi_i)$$. The off-diagonal entry is $$D_{ij} = (w_j/w_i)\,/\,(\xi_i - \xi_j)$$ with barycentric weights $$w_j = 1/\prod_{k\neq j}(\xi_j-\xi_k)$$, *not* simply $$1/(\xi_i-\xi_j)$$, which is only correct when all the weights are equal (they are not, for Gauss points). The code below uses the correct form. (An earlier draft of this solver had exactly this bug; it is an easy one to make.)
 - With **Gauss** points the solution points are interior, so the face values must be obtained by polynomial **extrapolation** (`lL`, `lR` below), not by reading off an endpoint node.
 
 ## The code
@@ -106,10 +106,10 @@ def fr_advection(p, N, a=1.0, Lx=1.0, tend=1.0, cfl=0.1):
 
 ## What it does
 
-That is the whole solver. To measure its error, advect the bump for a whole number of periods and compare against the initial condition — the exact answer. The figure at the top of this note is what you get when you refine it two ways.
+That is the whole solver. To measure its error, advect the bump for a whole number of periods and compare against the initial condition, the exact answer. The figure at the top of this note is what you get when you refine it two ways.
 
-Hold the degree $$p$$ fixed and refine the mesh (left panel): the error falls at the design rate, error $$\sim N^{-(p+1)}$$ — the dashed reference slopes — once the mesh resolves the bump. On the finest meshes the observed orders come out clean, about $$4.0$$ for $$p=3$$ and $$5.0$$ for $$p=4$$. The low-order curves ($$p = 1, 2$$) are still pre-asymptotic on the coarsest meshes: a narrow feature simply is not resolved by a handful of low-order cells — the very effect the companion note dramatised.
+Hold the degree $$p$$ fixed and refine the mesh (left panel): the error falls at the design rate, error $$\sim N^{-(p+1)}$$ (the dashed reference slopes), once the mesh resolves the bump. On the finest meshes the observed orders come out clean, about $$4.0$$ for $$p=3$$ and $$5.0$$ for $$p=4$$. The low-order curves ($$p = 1, 2$$) are still pre-asymptotic on the coarsest meshes: a narrow feature simply is not resolved by a handful of low-order cells, the same effect the companion note showed.
 
-Hold the mesh fixed and raise $$p$$ instead (right panel): on this smooth solution the error drops faster than any algebraic rate — from about $$2\times10^{-1}$$ down to $$6\times10^{-5}$$ going from $$p = 1$$ to $$p = 8$$ on just six elements. That is spectral convergence, and it is the whole reason high-order pays off when the flow is smooth and well-resolved.
+Hold the mesh fixed and raise $$p$$ instead (right panel): on this smooth solution the error drops faster than any algebraic rate, from about $$2\times10^{-1}$$ down to $$6\times10^{-5}$$ going from $$p = 1$$ to $$p = 8$$ on just six elements. That is spectral convergence, and it is the whole reason high-order pays off when the flow is smooth and well-resolved.
 
 *This solver and the companion note's animations are the same idea, one dimension apart.*
