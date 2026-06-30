@@ -4,6 +4,7 @@ title: "The smallest high-order solver that works"
 date: 2026-06-26
 categories: numerical-methods
 topic: Flux reconstruction
+part: 2
 math: true
 published: true   # READY — part 2 of 2 (the build). Companion: "Why high-order? Flux reconstruction, from motivation to method". Flip to `true` to publish.
 ---

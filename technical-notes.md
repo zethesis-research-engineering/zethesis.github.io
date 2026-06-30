@@ -8,12 +8,12 @@ Short, practical notes on simulation, numerical methods, CFD workflows and scien
 
 {% if site.posts.size > 0 %}
 {% for topic in site.note_topics %}
-{% assign topic_posts = site.posts | where: "topic", topic %}
+{% assign topic_posts = site.posts | where: "topic", topic | sort: "part" %}
 {% if topic_posts.size > 0 %}
 ## {{ topic }}
 
 {% for post in topic_posts %}
-- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
+{{ forloop.index }}. [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
 {% endfor %}
 {% endif %}
 {% endfor %}

@@ -4,6 +4,7 @@ title: "Why high-order? Flux reconstruction, from motivation to method"
 date: 2026-06-25
 categories: numerical-methods
 topic: Flux reconstruction
+part: 1
 math: true
 published: true   # READY — part 1 of 2 (the "why/what"). Companion: "The smallest high-order solver that works". Flip to `true` to publish.
 ---
