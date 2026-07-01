@@ -10,6 +10,10 @@ We work on the practical problems that appear when research-grade simulation has
 
 Consulting and simulation work across axial and radial turbomachinery, hydraulic turbines, external aerodynamics, aeroacoustics and hydroacoustics. We work with RANS where it is the right tool, and with high-order LES when the physics demands it.
 
+## Uncertainty quantification — KAOS
+
+Quantifying how uncertain inputs — Reynolds number, inlet turbulence, incidence, turbulence- and transition-model coefficients — propagate to the results, so a CFD study comes with confidence bounds and a sensitivity ranking rather than a single unqualified number. This is our [KAOS](/kaos/) capability: non-intrusive polynomial chaos, global sensitivity and Bayesian calibration, wrapped around your solver.
+
 ## Simulation workflow automation
 
 Turning manual, error-prone CFD, post-processing and reporting steps into repeatable pipelines — so the same case runs the same way every time, with less effort and fewer mistakes.
