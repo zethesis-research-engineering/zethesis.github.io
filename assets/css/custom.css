@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Zethesis — custom restyle layered on top of minima
+   Palette: cool neutrals + kingfisher teal/blue accent
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f4f7f9;
+  --text: #1b2733;
+  --muted: #5b6b78;
+  --border: #e2e8ee;
+  --accent: #1c6fb0;
+  --accent-dark: #14568a;
+  --accent-soft: #e8f1f9;
+  --navy: #16385c;
+  --gold: #c8962f;
+  --gold-dark: #a97d22;
+  --gold-soft: #f7edd6;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(16, 42, 60, .04), 0 6px 20px rgba(16, 42, 60, .06);
+  --maxw: 1080px;
+}
+
+/* ---- Base ---------------------------------------------------------------- */
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  max-width: var(--maxw);
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+p { margin-bottom: 1.1em; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .15s ease;
+}
+a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+/* ---- Headings ------------------------------------------------------------ */
+h1, h2, h3, h4 {
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+h1 { font-size: 2.1rem; margin: 0 0 .6em; }
+h2 {
+  font-size: 1.5rem;
+  margin: 2.2em 0 .7em;
+  padding-top: .7em;
+  border-top: 1px solid var(--border);
+}
+h3 { font-size: 1.18rem; margin: 1.6em 0 .5em; }
+.page-content h2:first-of-type { border-top: 0; padding-top: 0; }
+
+/* ---- Header / nav -------------------------------------------------------- */
+.site-header {
+  border-top: 3px solid var(--gold);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  min-height: 64px;
+}
+.site-title, .site-title:visited {
+  color: var(--text) !important;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.site-title:hover { color: var(--accent) !important; text-decoration: none; }
+.site-nav .page-link {
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 64px;
+}
+.site-nav .page-link:hover { color: var(--accent); text-decoration: none; }
+.site-nav .page-link:not(:last-child) { margin-right: 22px; }
+
+/* ---- Footer -------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--muted);
+}
+.site-footer .footer-heading,
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+/* ---- Content elements ---------------------------------------------------- */
+.page-content { padding: 42px 0; }
+
+blockquote {
+  color: var(--text);
+  border-left: 4px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: normal;
+  letter-spacing: 0;
+}
+blockquote > :last-child { margin-bottom: 0; }
+
+pre, code {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+pre { padding: 14px 16px; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+table th, table td { border: 1px solid var(--border); padding: 8px 12px; }
+table th { background: var(--bg-alt); }
+
+hr { border: 0; border-top: 1px solid var(--border); margin: 2em 0; }
+
+/* ---- Buttons ------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: .98rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  transition: all .15s ease;
+}
+.btn + .btn { margin-left: 10px; }
+.btn-primary { background: var(--accent); color: #fff !important; }
+.btn-primary:hover { background: var(--accent-dark); text-decoration: none; color: #fff !important; }
+.btn-outline { background: transparent; color: var(--accent) !important; border-color: var(--border); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent-dark) !important; text-decoration: none; }
+
+/* ---- Hero ---------------------------------------------------------------- */
+.hero {
+  text-align: center;
+  background: linear-gradient(180deg, var(--accent-soft), var(--bg));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 48px 28px 42px;
+  margin: 8px 0 40px;
+}
+.hero-logo { display: block; width: 100%; max-width: 300px; margin: 0 auto 22px; }
+.hero h1 { font-size: 2.4rem; margin-bottom: .5em; }
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: .55em auto 0;
+  background: var(--gold);
+  border-radius: 2px;
+}
+.hero .lead {
+  color: var(--muted);
+  font-size: 1.2rem;
+  max-width: 640px;
+  margin: 0 auto 1.4em;
+}
+.hero-actions { margin-bottom: 0; }
+
+.lead { font-size: 1.15rem; color: var(--muted); }
+
+/* ---- Feature grid -------------------------------------------------------- */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin: 1.4em 0 1.8em;
+}
+.feature {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 22px 20px;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.feature:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(16,42,60,.08), 0 12px 28px rgba(16,42,60,.10); }
+.feature h3 {
+  margin: 0 0 .4em;
+  font-size: 1.05rem;
+  color: var(--accent-dark);
+}
+.feature p { margin: 0; color: var(--muted); font-size: .98rem; }
+.feature p a { font-weight: 600; }
+
+/* Per-card accent: coloured top edge + matching heading text.
+   matplotlib tab10 palette, with the kingfisher gold on KAOS. */
+.feature { border-top: 3px solid var(--c, var(--border)); }
+.feature h3 { color: var(--c, var(--accent-dark)); }
+.feature-cfd  { --c: #1f77b4; } /* tab:blue   */
+.feature-kaos { --c: #c8962f; } /* gold       */
+.feature-sw   { --c: #2ca02c; } /* tab:green  */
+.feature-hpc  { --c: #d62728; } /* tab:red    */
+.feature-auto { --c: #9467bd; } /* tab:purple */
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 700px) {
+  .hero { padding: 34px 18px; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero .lead { font-size: 1.08rem; }
+  .btn { display: block; text-align: center; }
+  .btn + .btn { margin-left: 0; margin-top: 10px; }
+}

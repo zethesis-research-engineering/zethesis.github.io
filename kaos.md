@@ -23,4 +23,6 @@ Most RANS CFD is run deterministically: fixed boundary conditions, fixed model c
 
 KAOS wraps your solver as a black box, so it needs no changes to the flow solver itself. It is built around the quantities turbomachinery and aerodynamics engineers care about: loss coefficient, deviation, separation extent. And it is deliberately narrow. It does uncertainty quantification well, on a small number of solver runs, rather than trying to be a general-purpose analysis suite. That focus is what keeps it cheap to run and honest about what it claims.
 
-KAOS is a capability we are building and delivering through consulting, or as a stand-alone application. If uncertainty, sensitivity or model calibration matters for your problem, the best starting point is [a conversation](/consulting/).
+KAOS is a capability we are building and delivering through consulting, or as a stand-alone application. If uncertainty, sensitivity or model calibration matters for your problem, the best starting point is a conversation.
+
+<p><a class="btn btn-primary" href="/consulting/">Book a free call</a></p>
