@@ -24,6 +24,7 @@ We run the CFD studies engineering teams need to understand and improve flow-dri
     <p>Solver setup, meshing, turbulence modelling and validation.</p>
   </div>
   <div class="feature feature-kaos">
+    <img src="/assets/images/kaos.png" alt="KAOS" style="display:block;width:96px;margin:2px auto 12px;">
     <h3>Uncertainty quantification — KAOS</h3>
     <p>Confidence bounds and sensitivity via non-intrusive polynomial chaos. <a href="/kaos/">Learn more →</a></p>
   </div>

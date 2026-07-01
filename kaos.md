@@ -4,6 +4,8 @@ title: KAOS
 permalink: /kaos/
 ---
 
+<img src="/assets/images/kaos.png" alt="KAOS — UQ tool" style="display:block;width:100%;max-width:300px;margin:0.5rem auto 2rem;">
+
 KAOS is our uncertainty-quantification capability for CFD. It is built on polynomial chaos, which is where the name comes from. A single simulation gives you one answer. KAOS tells you how much to trust it.
 
 ## The question we answer
